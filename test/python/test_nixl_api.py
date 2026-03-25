@@ -69,6 +69,12 @@ def two_connected_agents(backend_name):
 
 
 @pytest.fixture
+def strict_locks_agent():
+    config = nixl_agent_config(sync_mode=nixl_thread_sync_t.NIXL_THREAD_SYNC_STRICT)
+    return nixl_agent(str(uuid.uuid4(), config)
+
+
+@pytest.fixture
 def one_reg_list():
     return bindings.nixlRegDList(bindings.DRAM_SEG)
 
